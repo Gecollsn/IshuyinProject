@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/include_top_view"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@color/gray_f0f0f0"
+    android:clipChildren="false"
+    android:duplicateParentState="true"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_main_subscribe_tabs_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:text="0"
+        android:textColor="@color/selector_color_normal_black66_selected_green"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_main_subscribe_tabs_title"
+        style="@style/tv_wid$wp_hei$wp_gra$cen_size$14"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1dp"
+        android:text="我的下载"
+        android:textColor="@color/selector_color_normal_black66_selected_green"/>
+
+    <ImageView
+        android:scaleType="fitStart"
+        android:id="@+id/iv_arrow_down"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/selector_drawable_main_subscribe_arrow_down"/>
+</LinearLayout>

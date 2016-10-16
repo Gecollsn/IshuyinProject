@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_smoke_f5f5f5"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_bar"/>
+
+    <GridView
+        android:id="@+id/gv_sort_part1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:horizontalSpacing="1dp"
+        android:numColumns="3"
+        android:verticalSpacing="1dp"/>
+
+    <GridView
+        android:id="@+id/gv_sort_part2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white_smoke_f5f5f5"
+        android:horizontalSpacing="1dp"
+        android:numColumns="3"
+        android:listSelector="@color/transparent"
+        android:verticalSpacing="1dp"/>
+
+    <GridView
+        android:id="@+id/gv_sort_part3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white_smoke_f5f5f5"
+        android:horizontalSpacing="1dp"
+        android:numColumns="3"
+        android:verticalSpacing="1dp"/>
+</LinearLayout>

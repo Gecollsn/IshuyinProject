@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@drawable/selector_drawable_normal_white_pressed_blackaa"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:textColor="@color/selector_color_normal_blackaa_pressed_white"
+    android:textSize="@dimen/tv_middle_size"/>

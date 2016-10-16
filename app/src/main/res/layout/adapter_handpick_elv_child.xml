@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <GridView
+        android:padding="10dp"
+        android:id="@+id/gv_handpick_child"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:horizontalSpacing="10dp"
+        android:numColumns="4"
+        android:verticalSpacing="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_handpick_child_more"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:drawablePadding="10dp"
+        android:drawableRight="@drawable/main_handpick_more"
+        android:text="更多"
+        android:textColor="@color/green_spring_8dc44c"
+        android:textSize="@dimen/tv_middle_size"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/white_smoke_f5f5f5"/>
+</LinearLayout>

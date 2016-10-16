@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.ishuyin.gecollsn.utils.view.ExpandableTextView
+        android:id="@+id/expand_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        expandableTextView:animAlphaStart="1"
+        expandableTextView:maxCollapsedLines="4">
+
+        <TextView
+            android:id="@id/expandable_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="#666666"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@id/expand_collapse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|end|bottom"
+            android:background="@android:color/transparent"
+            android:text="展开"
+            android:textSize="@dimen/tv_middle_size"
+            android:gravity="center"
+            android:textColor="@color/green_spring_8dc44c"
+            android:padding="16dp" />
+    </com.ishuyin.gecollsn.utils.view.ExpandableTextView>
+
+</LinearLayout>

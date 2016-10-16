@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_smoke_f5f5f5"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_bar"/>
+
+    <include layout="@layout/include_tab_selection"/>
+
+    <ExpandableListView
+        android:id="@+id/elv_main_handpick"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="0dp"
+        android:divider="@drawable/transparent"
+        android:layout_marginTop="2dp"
+        android:groupIndicator="@null"/>
+</LinearLayout>

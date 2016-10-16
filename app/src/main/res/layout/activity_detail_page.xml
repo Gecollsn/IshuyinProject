@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_smoke_f5f5f5"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/iv_detail_book_logo"
+            android:layout_width="100dp"
+            android:layout_height="160dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/detail_logo"/>
+
+        <TextView
+            android:id="@+id/tv_detail_book_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_detail_book_logo"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/iv_detail_book_logo"
+            android:text="天才相师"
+            android:textColor="@color/black_aa"
+            android:textSize="@dimen/tv_middle_more"/>
+
+        <TextView
+            android:id="@+id/tv_detail_book_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_detail_book_title"
+            android:layout_below="@+id/tv_detail_book_title"
+            android:layout_marginTop="10dp"
+            android:text="作者：王大锤"
+            android:textColor="@color/black_5c"
+            android:textSize="@dimen/tv_middle_low"/>
+
+        <TextView
+            android:id="@+id/tv_detail_book_player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_detail_book_title"
+            android:layout_below="@+id/tv_detail_book_author"
+            android:layout_marginTop="10dp"
+            android:text="播音：王大锤"
+            android:textColor="@color/black_5c"
+            android:textSize="@dimen/tv_middle_low"/>
+
+        <TextView
+            android:id="@+id/tv_detail_book_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_detail_book_title"
+            android:layout_below="@+id/tv_detail_book_player"
+            android:layout_marginTop="10dp"
+            android:text="状态：连载中"
+            android:textColor="@color/black_5c"
+            android:textSize="@dimen/tv_middle_low"/>
+
+        <TextView
+            android:id="@+id/tv_detail_book_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_detail_book_title"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/detail_favorite_true"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="收藏"
+            android:textColor="@color/black_5c"
+            android:textSize="@dimen/tv_middle_low"/>
+
+        <TextView
+            android:id="@+id/tv_detail_book_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/detail_share"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="分享"
+            android:textColor="@color/black_5c"
+            android:textSize="@dimen/tv_middle_low"/>
+    </RelativeLayout>
+
+    <include
+        layout="@layout/include_tab_selection"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginBottom="1px"
+        android:layout_marginTop="10dp"/>
+
+    <include layout="@layout/include_expandable_textview"/>
+
+    <ExpandableListView
+        android:id="@+id/elv_detail_more"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="0dp"
+        android:divider="@drawable/transparent"
+        android:layout_marginTop="2dp"
+        android:groupIndicator="@null"/>
+
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    >
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pic_download_fail_bg"/>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_bookName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="天才相师"
+            android:textSize="@dimen/tv_middle_low"
+            />
+
+        <TextView
+            android:id="@+id/tv_playerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_bookName"
+            android:layout_marginTop="7dp"
+            android:text="播音员：刘忙"
+            android:textSize="@dimen/tv_small_low"/>
+
+        <TextView
+            android:id="@+id/tv_latestUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_playerName"
+            android:layout_margin="1dp"
+            android:text="最后更新时间：2015-01-03"
+            android:textSize="@dimen/tv_small_low"/>
+
+        <View
+            android:id="@+id/v_divider"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@color/black_33"/>
+
+        <TextView
+            android:id="@+id/tv_delete_bookInfo"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingRight="10dp"
+            android:drawablePadding="5dp"
+            android:drawableLeft="@drawable/trash"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/tv_small_size"/>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="sidebar_item_background_activated_dark">#ff4c365d</color>
+    <color name="grays">#818181</color>
+    <color name="gray_font">#818181</color>
+    <color name="common_title">#F9F9F9</color>
+    <color name="pull_refresh_textview">#000000</color>
+    <color name="refresh_head_bg">#2B2B2B</color>
+    <color name="backColor">#2000</color>
+    <color name="defaultTextColor">#666</color>
+    <color name="viewfinder_frame">#2477ab</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="result_view">#b0000000</color>
+    <color name="deepcolor">#faaa5f</color>
+    <color name="shadowcolor">#333333</color>
+    <color name="naming">#ABABAB</color>
+    <color name="background">#efefef</color>
+    <color name="orange_yellow">#9b9ba0</color>
+    <color name="login_btn_bg">#009EE6</color>
+    <color name="main_bule">#40B0E3</color>
+    <color name="black_2">#424242</color>
+</resources>

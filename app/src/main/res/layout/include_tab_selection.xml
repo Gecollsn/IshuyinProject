@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tab_selection1"
+        style="@style/style_tv_global_select_tab"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="选项一"/>
+
+    <TextView
+        android:id="@+id/tab_selection2"
+        style="@style/style_tv_global_select_tab"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="选项二"/>
+
+    <TextView
+        android:id="@+id/tab_selection3"
+        style="@style/style_tv_global_select_tab"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="选项三"/>
+    <TextView
+        android:id="@+id/tab_selection4"
+        style="@style/style_tv_global_select_tab"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:text="选项四"/>
+</LinearLayout>

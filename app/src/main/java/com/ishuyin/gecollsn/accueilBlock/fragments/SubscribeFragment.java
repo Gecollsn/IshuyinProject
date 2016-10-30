@@ -58,7 +58,7 @@ public class SubscribeFragment extends BaseFragment {
             SPMain.setVirtualWritten(true);
             for (int i = 0; i < 10; i++) {
                 BookInfo bookInfo = new BookInfo();
-                bookInfo.setBookName("书籍" + i);
+                bookInfo.setTitle("书籍" + i);
                 bookInfo.setBookPlayer("GC" + i);
                 bookInfo.setLatestUpdate(DateUtil.addDays(DateUtil.DATE_CLINE, i));
                 AccueilModel.addDownloadBook(bookInfo);
@@ -79,7 +79,7 @@ public class SubscribeFragment extends BaseFragment {
         tv_recent_favorite.setText("我的收藏");
         mAdapter = new EasyAdapter<BookInfo>(R.layout.adapter_main_subscribe) {
             public void convert(ViewHolder vh, BookInfo bookInfo) {
-                vh.getTextView(R.id.tv_bookName).setText(bookInfo.getBookName());
+                vh.getTextView(R.id.tv_bookName).setText(bookInfo.getTitle());
                 vh.getTextView(R.id.tv_playerName).setText(mActivity.getString(R.string.voicePlayer) + bookInfo
                         .getBookPlayer());
                 vh.getTextView(R.id.tv_latestUpdate).setText(mActivity.getString(R.string.lastedUpdate) + DateUtil

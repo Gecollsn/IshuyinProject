@@ -129,12 +129,12 @@ public class HandpickExpandAdapter extends BaseExpandableListAdapter {
 
             vh.getView(R.id.tv_handpick_child_more).setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    String _TAG = HandpickMoreActivity.TAG_RECOMMENT;
+                    String _TAG = AC.type.TAG_RECOMMEND;
                     switch (groupPosition) {
-                        case 0: _TAG = HandpickMoreActivity.TAG_RECOMMENT; break;
-                        case 1: _TAG = HandpickMoreActivity.TAG_HOT; break;
-                        case 2: _TAG = HandpickMoreActivity.TAG_NEW; break;
-                        case 3: _TAG = HandpickMoreActivity.TAG_FINISHED; break;
+                        case 0: _TAG = AC.type.TAG_RECOMMEND; break;
+                        case 1: _TAG = AC.type.TAG_HOT; break;
+                        case 2: _TAG = AC.type.TAG_NEW; break;
+                        case 3: _TAG = AC.type.TAG_FINISHED; break;
                     }
                     Intent intent = new Intent(mEListView.getContext(), HandpickMoreActivity.class);
                     intent.putExtra(AC.io.HANDPIC_MORE_TAG, _TAG);

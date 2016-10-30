@@ -15,8 +15,8 @@ import org.greenrobot.greendao.annotation.Id;
 public class BookInfo {
     @Id(autoincrement = true)
     private long id;
-    private String bookName = "";
-    private String bookLogoUrl = "";
+    private String title = "";
+    private String thumb = "";
     private String bookPlayer = "";
     private String latestUpdate = "";
     private String bookDownloadUrl = "";
@@ -32,8 +32,8 @@ public class BookInfo {
             String latestUpdate, String bookDownloadUrl, String createTime,
             int type) {
         this.id = id;
-        this.bookName = bookName;
-        this.bookLogoUrl = bookLogoUrl;
+        this.title = bookName;
+        this.thumb = bookLogoUrl;
         this.bookPlayer = bookPlayer;
         this.latestUpdate = latestUpdate;
         this.bookDownloadUrl = bookDownloadUrl;
@@ -49,20 +49,20 @@ public class BookInfo {
         this.id = id;
     }
 
-    public String getBookName() {
-        return this.bookName;
+    public String getTitle() {
+        return this.title;
     }
 
-    public void setBookName(String bookName) {
-        this.bookName = bookName;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getBookLogoUrl() {
-        return this.bookLogoUrl;
+    public String getThumb() {
+        return this.thumb;
     }
 
-    public void setBookLogoUrl(String bookLogoUrl) {
-        this.bookLogoUrl = bookLogoUrl;
+    public void setThumb(String thumb) {
+        this.thumb = thumb;
     }
 
     public String getBookPlayer() {

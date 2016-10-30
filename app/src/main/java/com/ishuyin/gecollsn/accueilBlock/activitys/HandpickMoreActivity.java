@@ -28,10 +28,6 @@ public class HandpickMoreActivity extends BaseActivity {
     @BindView(R.id.tab_selection3)  TextView tv_new;
     @BindView(R.id.tab_selection4)  TextView tv_finished;
     @BindView(R.id.action_search_et)  TextView et_action_search;
-    public final static String TAG_RECOMMENT = "recommend";
-    public final static String TAG_HOT = "hot";
-    public final static String TAG_NEW = "new";
-    public final static String TAG_FINISHED = "finished";
     private HandpickMoreAdapter mAdapter;
 
     @Override
@@ -70,10 +66,10 @@ public class HandpickMoreActivity extends BaseActivity {
         et_action_search.setFocusable(false);
 
         final String _TAG = getIntent().getStringExtra(AC.io.HANDPIC_MORE_TAG);
-        if (_TAG.equals(TAG_RECOMMENT)) recommentSelected();
-        else if (_TAG.equals(TAG_HOT)) hotSelected();
-        else if (_TAG.equals(TAG_NEW)) newSelected();
-        else if (_TAG.equals(TAG_FINISHED)) finishedSelected();
+        if (_TAG.equals(AC.type.TAG_RECOMMEND)) recommendSelected();
+        else if (_TAG.equals(AC.type.TAG_HOT)) hotSelected();
+        else if (_TAG.equals(AC.type.TAG_NEW)) newSelected();
+        else if (_TAG.equals(AC.type.TAG_FINISHED)) finishedSelected();
 
         mAdapter = new HandpickMoreAdapter(R.layout.adapter_handpick_more_lv);
         mListView.setAdapter(mAdapter);
@@ -86,23 +82,23 @@ public class HandpickMoreActivity extends BaseActivity {
     }
 
     @OnClick(R.id.tab_selection1)
-    void recommentSelected() {
-        toggleTag(TAG_RECOMMENT);
+    void recommendSelected() {
+        toggleTag(AC.type.TAG_RECOMMEND);
     }
 
     @OnClick(R.id.tab_selection2)
     void hotSelected() {
-        toggleTag(TAG_HOT);
+        toggleTag(AC.type.TAG_HOT);
     }
 
     @OnClick(R.id.tab_selection3)
     void newSelected() {
-        toggleTag(TAG_NEW);
+        toggleTag(AC.type.TAG_NEW);
     }
 
     @OnClick(R.id.tab_selection4)
     void finishedSelected() {
-        toggleTag(TAG_FINISHED);
+        toggleTag(AC.type.TAG_FINISHED);
     }
 
     public void toggleTag(String tag) {
@@ -111,10 +107,10 @@ public class HandpickMoreActivity extends BaseActivity {
         tv_new.setSelected(false);
         tv_finished.setSelected(false);
         et_action_search.setSelected(false);
-        if (tag.equals(TAG_RECOMMENT)) tv_recommend.setSelected(true);
-        else if (tag.equals(TAG_HOT)) tv_hot.setSelected(true);
-        else if (tag.equals(TAG_NEW)) tv_new.setSelected(true);
-        else if (tag.equals(TAG_FINISHED))tv_finished.setSelected(true);
+        if (tag.equals(AC.type.TAG_RECOMMEND)) tv_recommend.setSelected(true);
+        else if (tag.equals(AC.type.TAG_HOT)) tv_hot.setSelected(true);
+        else if (tag.equals(AC.type.TAG_NEW)) tv_new.setSelected(true);
+        else if (tag.equals(AC.type.TAG_FINISHED))tv_finished.setSelected(true);
     }
 
     public void clickBack(View v) {

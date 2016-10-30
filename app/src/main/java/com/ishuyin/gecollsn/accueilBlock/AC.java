@@ -15,5 +15,11 @@ public final class AC {
         public static final int BOOK_DOWNLOAD = 0;
         public static final int BOOK_FAVORITE = 1;
         public static final int BOOK_RECENT = 2;
+
+        public static final String TAG_RECOMMEND = "recommend";
+        public static final String TAG_HOT = "hot";
+        public static final String TAG_NEW = "new";
+        public static final String TAG_FINISHED = "finished";
+        public static final String TAG_BANNER = "slide";
     }
 }

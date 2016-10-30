@@ -68,12 +68,12 @@ public class BookInfoDao extends AbstractDao<BookInfo, Long> {
         stmt.clearBindings();
         stmt.bindLong(1, entity.getId());
  
-        String bookName = entity.getBookName();
+        String bookName = entity.getTitle();
         if (bookName != null) {
             stmt.bindString(2, bookName);
         }
  
-        String bookLogoUrl = entity.getBookLogoUrl();
+        String bookLogoUrl = entity.getThumb();
         if (bookLogoUrl != null) {
             stmt.bindString(3, bookLogoUrl);
         }
@@ -105,12 +105,12 @@ public class BookInfoDao extends AbstractDao<BookInfo, Long> {
         stmt.clearBindings();
         stmt.bindLong(1, entity.getId());
  
-        String bookName = entity.getBookName();
+        String bookName = entity.getTitle();
         if (bookName != null) {
             stmt.bindString(2, bookName);
         }
  
-        String bookLogoUrl = entity.getBookLogoUrl();
+        String bookLogoUrl = entity.getThumb();
         if (bookLogoUrl != null) {
             stmt.bindString(3, bookLogoUrl);
         }
@@ -160,8 +160,8 @@ public class BookInfoDao extends AbstractDao<BookInfo, Long> {
     @Override
     public void readEntity(Cursor cursor, BookInfo entity, int offset) {
         entity.setId(cursor.getLong(offset + 0));
-        entity.setBookName(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
-        entity.setBookLogoUrl(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
+        entity.setTitle(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
+        entity.setThumb(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
         entity.setBookPlayer(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
         entity.setLatestUpdate(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
         entity.setBookDownloadUrl(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));

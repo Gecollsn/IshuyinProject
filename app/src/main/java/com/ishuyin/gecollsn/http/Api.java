@@ -10,14 +10,12 @@ import java.util.TreeMap;
 
 public abstract class Api {
 
-/**---------------------------------> 凸 不用怀疑，我就是分割线 凸 <-------------------------------------**/
+    /*------------------------------------ 接口的URL ------------------------------------------*/
+    private final static String HOST = "http://www.ishuyin.com/";
+    public static final String IMAGE_HOST = "http://mp3-45.oss-cn-hangzhou.aliyuncs.com/";
 
-/***************************************************************************************************************/
-/**=============================    专业占坑，尔等休要来抢     ====================================================*/
-
-
-/**============================    不来捣乱，咱们还是好朋友      ==================================================*/
-/***************************************************************************************************************/
+    /*----------------------------- 首页所有接口 ------------------------------*/
+    protected final static String HAND_PICK_DETAIL = HOST + "service.php?action=index&type=1";
 
     /**
      * 普通post,返回json
@@ -27,6 +25,16 @@ public abstract class Api {
      */
     protected static void post(Map<String, String> params, String url, Callback callback) {
         OkHttpUtils.post().url(url).params(params).tag(url).build().execute(callback);
+    }
+
+    /**
+     * 普通post,返回json
+     *
+     * @param params   参数列表
+     * @param callback 回调
+     */
+    protected static void get(Map<String, String> params, String url, Callback callback) {
+        OkHttpUtils.get().url(url).params(params).tag(url).build().execute(callback);
     }
 
     protected static void post(String url, Callback callback) {

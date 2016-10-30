@@ -67,7 +67,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IDefault
 
     protected void setBackGround() {
         ViewGroup container = (ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content);
-        container.setBackgroundDrawable(BackGroud.getSystemBackgroud());
+        container.setBackgroundDrawable(BackGround.getSystemBackground());
     }
 
     @Override

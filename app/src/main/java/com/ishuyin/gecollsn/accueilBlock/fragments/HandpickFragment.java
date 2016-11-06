@@ -33,7 +33,6 @@ public class HandpickFragment extends BaseFragment {
     private final int RANK = 0;
     private final int OVER = 1;
     private final int LOAD = 2;
-
     @BindView(R.id.tab_selection1)
     TextView tab_rank;
     @BindView(R.id.tab_selection2)

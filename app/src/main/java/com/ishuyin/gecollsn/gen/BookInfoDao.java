@@ -25,8 +25,8 @@ public class BookInfoDao extends AbstractDao<BookInfo, Long> {
      */
     public static class Properties {
         public final static Property Id = new Property(0, long.class, "id", true, "_id");
-        public final static Property BookName = new Property(1, String.class, "bookName", false, "BOOK_NAME");
-        public final static Property BookLogoUrl = new Property(2, String.class, "bookLogoUrl", false, "BOOK_LOGO_URL");
+        public final static Property Title = new Property(1, String.class, "title", false, "TITLE");
+        public final static Property Thumb = new Property(2, String.class, "thumb", false, "THUMB");
         public final static Property BookPlayer = new Property(3, String.class, "bookPlayer", false, "BOOK_PLAYER");
         public final static Property LatestUpdate = new Property(4, String.class, "latestUpdate", false, "LATEST_UPDATE");
         public final static Property BookDownloadUrl = new Property(5, String.class, "bookDownloadUrl", false, "BOOK_DOWNLOAD_URL");
@@ -48,8 +48,8 @@ public class BookInfoDao extends AbstractDao<BookInfo, Long> {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"BOOK_INFO\" (" + //
                 "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," + // 0: id
-                "\"BOOK_NAME\" TEXT," + // 1: bookName
-                "\"BOOK_LOGO_URL\" TEXT," + // 2: bookLogoUrl
+                "\"TITLE\" TEXT," + // 1: title
+                "\"THUMB\" TEXT," + // 2: thumb
                 "\"BOOK_PLAYER\" TEXT," + // 3: bookPlayer
                 "\"LATEST_UPDATE\" TEXT," + // 4: latestUpdate
                 "\"BOOK_DOWNLOAD_URL\" TEXT," + // 5: bookDownloadUrl
@@ -68,14 +68,14 @@ public class BookInfoDao extends AbstractDao<BookInfo, Long> {
         stmt.clearBindings();
         stmt.bindLong(1, entity.getId());
  
-        String bookName = entity.getTitle();
-        if (bookName != null) {
-            stmt.bindString(2, bookName);
+        String title = entity.getTitle();
+        if (title != null) {
+            stmt.bindString(2, title);
         }
  
-        String bookLogoUrl = entity.getThumb();
-        if (bookLogoUrl != null) {
-            stmt.bindString(3, bookLogoUrl);
+        String thumb = entity.getThumb();
+        if (thumb != null) {
+            stmt.bindString(3, thumb);
         }
  
         String bookPlayer = entity.getBookPlayer();
@@ -105,14 +105,14 @@ public class BookInfoDao extends AbstractDao<BookInfo, Long> {
         stmt.clearBindings();
         stmt.bindLong(1, entity.getId());
  
-        String bookName = entity.getTitle();
-        if (bookName != null) {
-            stmt.bindString(2, bookName);
+        String title = entity.getTitle();
+        if (title != null) {
+            stmt.bindString(2, title);
         }
  
-        String bookLogoUrl = entity.getThumb();
-        if (bookLogoUrl != null) {
-            stmt.bindString(3, bookLogoUrl);
+        String thumb = entity.getThumb();
+        if (thumb != null) {
+            stmt.bindString(3, thumb);
         }
  
         String bookPlayer = entity.getBookPlayer();
@@ -146,8 +146,8 @@ public class BookInfoDao extends AbstractDao<BookInfo, Long> {
     public BookInfo readEntity(Cursor cursor, int offset) {
         BookInfo entity = new BookInfo( //
             cursor.getLong(offset + 0), // id
-            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // bookName
-            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // bookLogoUrl
+            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // title
+            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // thumb
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // bookPlayer
             cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4), // latestUpdate
             cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5), // bookDownloadUrl

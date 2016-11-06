@@ -23,23 +23,27 @@ public class BookInfo {
     private String createTime = DateUtil.timestamp(true) + "";
     private int type;   // 0：我的下载，1：我的收藏，2：最近收听
 
-    @Generated(hash = 1952025412)
-    public BookInfo() {
-    }
 
-    @Generated(hash = 1962459891)
-    public BookInfo(long id, String bookName, String bookLogoUrl, String bookPlayer,
+
+    @Generated(hash = 1724191567)
+    public BookInfo(long id, String title, String thumb, String bookPlayer,
             String latestUpdate, String bookDownloadUrl, String createTime,
             int type) {
         this.id = id;
-        this.title = bookName;
-        this.thumb = bookLogoUrl;
+        this.title = title;
+        this.thumb = thumb;
         this.bookPlayer = bookPlayer;
         this.latestUpdate = latestUpdate;
         this.bookDownloadUrl = bookDownloadUrl;
         this.createTime = createTime;
         this.type = type;
     }
+
+
+    @Generated(hash = 1952025412)
+    public BookInfo() {
+    }
+
 
     public long getId() {
         return this.id;

@@ -22,7 +22,7 @@ android {
 
     greendao{
         schemaVersion 1
-        daoPackage 'com.ishuyin.gecollsn.gen'
+        daoPackage 'com.ishuyin.gecollsn.green'
         targetGenDir 'src/main/java'
     }
 }

@@ -1,4 +1,4 @@
-package com.ishuyin.gecollsn.gen;
+package com.ishuyin.gecollsn.green;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteStatement;

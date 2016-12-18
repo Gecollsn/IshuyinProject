@@ -29,26 +29,23 @@ public abstract class BaseActivity extends AppCompatActivity implements IDefault
         doInitEverything();
     }
 
-    protected void setStatusBar(){
+    protected void setStatusBar() {
         makeStatusTranslucent(translucentStatus());
         SystemBarTintManager sbtMgr = new SystemBarTintManager(this);
         sbtMgr.setStatusBarTintEnabled(true);
         sbtMgr.setStatusBarTintColor(getStatusBarColor());
     }
 
-    protected boolean translucentStatus(){
+    protected boolean translucentStatus() {
         return true;
     }
 
-    private void makeStatusTranslucent(boolean on){
+    private void makeStatusTranslucent(boolean on) {
         Window win = getWindow();
         WindowManager.LayoutParams winParams = win.getAttributes();
         final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-        if (on) {
-            winParams.flags |= bits;
-        } else {
-            winParams.flags &= ~bits;
-        }
+        if (on) winParams.flags |= bits;
+        else winParams.flags &= ~bits;
         win.setAttributes(winParams);
     }
 
@@ -85,7 +82,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IDefault
      *
      * @return
      */
-    protected int getStatusBarColor(){
+    protected int getStatusBarColor() {
         if (getStatusBarColorFromResId() == -1) return Color.parseColor("#8DC44C");
         else return getStatusBarColorFromResId();
     }
@@ -95,7 +92,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IDefault
      *
      * @return
      */
-    protected int getStatusBarColorFromResId(){
-       return -1;
+    protected int getStatusBarColorFromResId() {
+        return -1;
     }
 }

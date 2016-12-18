@@ -94,8 +94,8 @@ public class ToastUtil {
         text.setText(message);
 
         // 设置Toast的位置
-        toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
-        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, ScreenUtil.getScreenHeight(context) / 8);
+        toast.setDuration(duration);
         // 让Toast显示为我们自定义的样子
         toast.setView(layout);
         toast.show();

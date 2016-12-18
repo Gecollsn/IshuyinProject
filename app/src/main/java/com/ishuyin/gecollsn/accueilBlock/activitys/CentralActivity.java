@@ -53,7 +53,7 @@ public class CentralActivity extends BaseActivity {
     }
 
     @OnClick(R.id.main_tag_handpick)
-    void replaceHandpicFragment() {
+    void replaceHandpickFragment() {
         replaceFragment(handpickfragment, TAG_HANDPICK);
     }
 

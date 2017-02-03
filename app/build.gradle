@@ -45,4 +45,5 @@ dependencies {
     compile "com.google.code.gson:gson:${gsonVersion}"
     compile "com.squareup.okio:okio:${okioVersion}"
     compile "com.squareup.okhttp3:okhttp:${okhttpVersioon}"
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
 }

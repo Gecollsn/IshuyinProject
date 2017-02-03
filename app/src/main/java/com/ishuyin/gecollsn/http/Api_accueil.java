@@ -3,7 +3,7 @@ package com.ishuyin.gecollsn.http;
 import com.google.gson.Gson;
 import com.ishuyin.gecollsn.accueilBlock.AC;
 import com.ishuyin.gecollsn.accueilBlock.domain.BannerInfo;
-import com.ishuyin.gecollsn.accueilBlock.domain.BookInfo;
+import com.ishuyin.gecollsn.db.BookInfo;
 import com.ishuyin.gecollsn.base.IDataWriter;
 
 import org.json.JSONArray;

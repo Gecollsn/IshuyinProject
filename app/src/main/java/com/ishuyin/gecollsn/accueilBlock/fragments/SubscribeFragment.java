@@ -2,11 +2,12 @@ package com.ishuyin.gecollsn.accueilBlock.fragments;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.ishuyin.gecollsn.R;
-import com.ishuyin.gecollsn.accueilBlock.domain.BookInfo;
+import com.ishuyin.gecollsn.db.BookInfo;
 import com.ishuyin.gecollsn.accueilBlock.model.AccueilModel;
 import com.ishuyin.gecollsn.base.BaseFragment;
 import com.ishuyin.gecollsn.base.EasyAdapter;
@@ -29,12 +30,18 @@ public class SubscribeFragment extends BaseFragment {
 
     @BindView(R.id.main_personal_listView)
     ListView mListView;
-    @BindView(R.id.include_tabs_download)
+    @BindView(R.id.inc_tab_coin)
     View download;
-    @BindView(R.id.include_tabs_favorite)
+    @BindView(R.id.inc_tab_point)
     View favorite;
-    @BindView(R.id.include_tabs_listen)
+    @BindView(R.id.inc_tab_balance)
     View listen;
+    @BindView(R.id.iv_user_logo)
+    ImageView iv_user_logo;
+    @BindView(R.id.tv_user_name)
+    TextView tv_user_name;
+    @BindView(R.id.tv_user_locate)
+    TextView tv_user_locate;
     private TextView tv_recent_listen;
     private TextView tv_recent_download;
     private TextView tv_recent_favorite;
@@ -74,6 +81,8 @@ public class SubscribeFragment extends BaseFragment {
     }
 
     public void doInitDefaultEvent() {
+        tv_user_name.setText("游客");
+        tv_user_locate.setText("未知");
         tv_recent_listen.setText("最近收听");
         tv_recent_download.setText("我的下载");
         tv_recent_favorite.setText("我的收藏");
@@ -130,17 +139,17 @@ public class SubscribeFragment extends BaseFragment {
         }
     }
 
-    @OnClick(R.id.include_tabs_download)
+    @OnClick(R.id.inc_tab_coin)
     void onDownloadClicked() {
         toggleTags(DOWNLOAD);
     }
 
-    @OnClick(R.id.include_tabs_favorite)
+    @OnClick(R.id.inc_tab_point)
     void onFavoriteClicked() {
         toggleTags(FAVORITE);
     }
 
-    @OnClick(R.id.include_tabs_listen)
+    @OnClick(R.id.inc_tab_balance)
     void onListenClicked() {
         toggleTags(LISTEN);
     }

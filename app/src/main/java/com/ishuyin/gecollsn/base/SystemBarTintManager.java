@@ -24,7 +24,6 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.DisplayMetrics;
@@ -37,7 +36,10 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout.LayoutParams;
 
+import com.ishuyin.gecollsn.utils.DensityUtil;
+
 import java.lang.reflect.Method;
+
 
 /**
  * Class to manage status and navigation bar tint effects when using KitKat
@@ -66,7 +68,7 @@ public class SystemBarTintManager {
     /**
      * The default system bar tint color value.
      */
-    public static final int DEFAULT_TINT_COLOR = 0x99000000;
+    public static final int DEFAULT_TINT_COLOR = 0x66000000;
 
     private static String sNavBarOverride;
 
@@ -77,7 +79,6 @@ public class SystemBarTintManager {
     private boolean mNavBarTintEnabled;
     private View mStatusBarTintView;
     private View mNavBarTintView;
-    private Activity mActivity;
 
     /**
      * Constructor. Call this in the host activity onCreate method after its
@@ -86,8 +87,9 @@ public class SystemBarTintManager {
      *
      * @param activity The host activity.
      */
+    @TargetApi(19)
     public SystemBarTintManager(Activity activity) {
-        this.mActivity = activity;
+
         Window win = activity.getWindow();
         ViewGroup decorViewGroup = (ViewGroup) win.getDecorView();
 
@@ -109,7 +111,8 @@ public class SystemBarTintManager {
             if ((winParams.flags & bits) != 0) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     win.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                    decorViewGroup.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+                    win.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View
+                            .SYSTEM_UI_FLAG_LAYOUT_STABLE);
                     win.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                     win.setStatusBarColor(Color.TRANSPARENT);
                 }
@@ -227,7 +230,6 @@ public class SystemBarTintManager {
     public void setStatusBarTintResource(int res) {
         if (mStatusBarAvailable) {
             mStatusBarTintView.setBackgroundResource(res);
-            mActivity.getActionBar().setBackgroundDrawable(mActivity.getResources().getDrawable(res));
         }
     }
 
@@ -400,6 +402,8 @@ public class SystemBarTintManager {
                 context.getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true);
                 result = TypedValue.complexToDimensionPixelSize(tv.data, context.getResources().getDisplayMetrics());
             }
+            int maxHeight = DensityUtil.dp2px(48);
+            if (result > maxHeight) result = maxHeight;
             return result;
         }
 

@@ -2,6 +2,7 @@ package com.ishuyin.gecollsn.base;
 
 import android.app.Activity;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import butterknife.ButterKnife;
 public abstract class BaseActivity extends AppCompatActivity implements IDefault {
 
     protected Activity mActivity;
+    private SystemBarTintManager sbtMgr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +29,25 @@ public abstract class BaseActivity extends AppCompatActivity implements IDefault
         setContentView(definedLayoutId());
         ButterKnife.bind(this);
         doInitEverything();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            dealStatusSpace((ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content));
+        }
+    }
+
+    protected void dealStatusSpace(ViewGroup container) {
+        container.setPadding(container.getPaddingLeft(), container.getPaddingTop() + getSystemBarTint().getConfig()
+                .getStatusBarHeight(), container.getPaddingRight(), container.getPaddingBottom());
     }
 
     protected void setStatusBar() {
         makeStatusTranslucent(translucentStatus());
-        SystemBarTintManager sbtMgr = new SystemBarTintManager(this);
+        sbtMgr = new SystemBarTintManager(this);
         sbtMgr.setStatusBarTintEnabled(true);
         sbtMgr.setStatusBarTintColor(getStatusBarColor());
+    }
+
+    protected SystemBarTintManager getSystemBarTint() {
+        return sbtMgr;
     }
 
     protected boolean translucentStatus() {
@@ -84,7 +98,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IDefault
      */
     protected int getStatusBarColor() {
         if (getStatusBarColorFromResId() == -1) return Color.parseColor("#8DC44C");
-        else return getStatusBarColorFromResId();
+        else return getResources().getColor(getStatusBarColorFromResId());
     }
 
     /**

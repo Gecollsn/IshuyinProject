@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.app.Application;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.ishuyin.gecollsn.gen.DaoMaster;
-import com.ishuyin.gecollsn.gen.DaoSession;
+import com.ishuyin.gecollsn.green.DaoMaster;
+import com.ishuyin.gecollsn.green.DaoSession;
 import com.ishuyin.gecollsn.utils.DensityUtil;
-import com.ishuyin.gecollsn.utils.spUtil.SPUtil;
 import com.ishuyin.gecollsn.utils.ThreadUtil;
 import com.ishuyin.gecollsn.utils.ToastUtil;
+import com.ishuyin.gecollsn.utils.spUtil.SPUtil;
 
 import java.util.ArrayList;
 import java.util.List;

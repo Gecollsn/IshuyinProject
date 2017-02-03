@@ -3,54 +3,40 @@ package com.ishuyin.gecollsn.db;
 import com.ishuyin.gecollsn.utils.DateUtil;
 
 import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.Property;
+import org.greenrobot.greendao.annotation.Generated;
 
 /**
  * @author gecollsn
  * @create 5/22/2016
  * @company www.ishuyin.com
  */
-@Entity
+@Entity(nameInDb = "bookInfoTable", generateConstructors = false)
 public class BookInfo {
     @Id(autoincrement = true)
-    private long id;
+    @Property(nameInDb = "id")
+    private Long id;
+    private String order;
     private String title = "";
     private String thumb = "";
     private String bookPlayer = "";
     private String latestUpdate = "";
     private String bookDownloadUrl = "";
     private String createTime = DateUtil.timestamp(true) + "";
-    private int type;   // 0：我的下载，1：我的收藏，2：最近收听
+    private int download;   // 0：否，1：是
+    private int favorite;   // 0：否，1：是
+    private int recent;   // 0：否，1：是
 
-
-
-    @Generated(hash = 1724191567)
-    public BookInfo(long id, String title, String thumb, String bookPlayer,
-            String latestUpdate, String bookDownloadUrl, String createTime,
-            int type) {
-        this.id = id;
-        this.title = title;
-        this.thumb = thumb;
-        this.bookPlayer = bookPlayer;
-        this.latestUpdate = latestUpdate;
-        this.bookDownloadUrl = bookDownloadUrl;
-        this.createTime = createTime;
-        this.type = type;
-    }
-
-
-    @Generated(hash = 1952025412)
     public BookInfo() {
     }
 
-
-    public long getId() {
-        return this.id;
+    public String getOrder() {
+        return this.order;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setOrder(String order) {
+        this.order = order;
     }
 
     public String getTitle() {
@@ -101,11 +87,36 @@ public class BookInfo {
         this.createTime = createTime;
     }
 
-    public int getType() {
-        return this.type;
+    public int getDownload() {
+        return this.download;
     }
 
-    public void setType(int type) {
-        this.type = type;
+    public void setDownload(int download) {
+        this.download = download;
     }
+
+    public int getFavorite() {
+        return this.favorite;
+    }
+
+    public void setFavorite(int favorite) {
+        this.favorite = favorite;
+    }
+
+    public int getRecent() {
+        return this.recent;
+    }
+
+    public void setRecent(int recent) {
+        this.recent = recent;
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
 }

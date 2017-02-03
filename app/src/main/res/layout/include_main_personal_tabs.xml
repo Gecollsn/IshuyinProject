@@ -13,7 +13,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tv_main_subscribe_tabs_count"
+        android:id="@+id/tv_tag_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
@@ -23,7 +23,7 @@
         android:textStyle="bold"/>
 
     <TextView
-        android:id="@+id/tv_main_subscribe_tabs_title"
+        android:id="@+id/tv_tag_title"
         style="@style/tv_wid$wp_hei$wp_gra$cen_size$14"
         android:layout_height="match_parent"
         android:layout_marginTop="1dp"

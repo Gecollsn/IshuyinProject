@@ -7,7 +7,7 @@ import android.widget.TextView;
 import com.ishuyin.gecollsn.R;
 import com.ishuyin.gecollsn.accueilBlock.AC;
 import com.ishuyin.gecollsn.accueilBlock.adapters.HandpickMoreAdapter;
-import com.ishuyin.gecollsn.accueilBlock.domain.BookInfo;
+import com.ishuyin.gecollsn.db.BookInfo;
 import com.ishuyin.gecollsn.base.BaseActivity;
 
 import java.util.ArrayList;

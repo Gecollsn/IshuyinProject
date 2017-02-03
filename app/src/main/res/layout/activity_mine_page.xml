@@ -2,10 +2,10 @@
 
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:scrollbars="none"
     android:layout_width="match_parent"
-    android:fitsSystemWindows="true"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    android:scrollbars="none">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
         <LinearLayout
             android:id="@+id/ll_tabs"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="60dp"
             android:clipChildren="false"
             android:divider="@drawable/shape_linear_vertical_divider_transparent"
             android:dividerPadding="2dp"
@@ -26,15 +26,15 @@
             android:showDividers="middle">
 
             <include
-                android:id="@+id/include_tabs_download"
+                android:id="@+id/inc_tab_coin"
                 layout="@layout/include_main_personal_tabs"/>
 
             <include
-                android:id="@+id/include_tabs_favorite"
+                android:id="@+id/inc_tab_point"
                 layout="@layout/include_main_personal_tabs"/>
 
             <include
-                android:id="@+id/include_tabs_listen"
+                android:id="@+id/inc_tab_balance"
                 layout="@layout/include_main_personal_tabs"/>
         </LinearLayout>
 
@@ -47,6 +47,7 @@
             android:divider="@drawable/shape_linear_horizon_divider_black33"
             android:orientation="vertical"
             android:paddingLeft="15dp"
+            android:layout_marginTop="10dp"
             android:showDividers="middle">
 
             <include layout="@layout/include_mine_option_list"/>
@@ -65,16 +66,16 @@
             android:layout_height="100dp">
 
             <Button
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
                 android:background="@drawable/mine_exit_btn"
                 android:gravity="center"
                 android:text="退出登录"
-                android:textSize="@dimen/tv_large_size"
-                android:textColor="@color/white_dd"/>
+                android:textColor="@color/white_dd"
+                android:textSize="@dimen/tv_middle_size"/>
         </FrameLayout>
 
     </LinearLayout>

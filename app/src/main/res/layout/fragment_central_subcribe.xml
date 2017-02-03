@@ -35,15 +35,15 @@
             android:showDividers="middle">
 
             <include
-                android:id="@+id/include_tabs_download"
+                android:id="@+id/inc_tab_coin"
                 layout="@layout/include_main_personal_tabs"/>
 
             <include
-                android:id="@+id/include_tabs_favorite"
+                android:id="@+id/inc_tab_point"
                 layout="@layout/include_main_personal_tabs"/>
 
             <include
-                android:id="@+id/include_tabs_listen"
+                android:id="@+id/inc_tab_balance"
                 layout="@layout/include_main_personal_tabs"/>
         </LinearLayout>
 

@@ -12,7 +12,6 @@
         <item name="textColor">#ff6666</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:fitsSystemWindows">true</item>
     </style>
 
     <style name="AppTheme.NoActionBar.FullScreen">

@@ -1,5 +1,6 @@
 package com.ishuyin.gecollsn.accueilBlock.activitys;
 
+import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -22,13 +23,28 @@ public class MinePageActivity extends BaseActivity implements View.OnClickListen
     TextView tv_user_name;
     @BindView(R.id.tv_user_locate)
     TextView tv_user_locate;
+    @BindView(R.id.tv_user_des)
+    TextView tv_user_des;
     @BindView(R.id.ly_user_function)
     ViewGroup ly_user_function;
+    @BindView(R.id.ly_user)
+    ViewGroup ly_user;
     private View ly_vip;
     private View ly_words;
     private View ly_consume;
     private View ly_play;
     private View ly_settings;
+    private TextView tv_coin_count;
+    private TextView tv_coin_title;
+    private TextView tv_point_count;
+    private TextView tv_point_title;
+    private TextView tv_balance_count;
+    private TextView tv_balance_title;
+    private TextView tv_user_vip;
+    private TextView tv_user_words;
+    private TextView tv_user_consume;
+    private TextView tv_user_play;
+    private TextView tv_user_settings;
 
     @Override
     protected int definedLayoutId() {
@@ -50,12 +66,45 @@ public class MinePageActivity extends BaseActivity implements View.OnClickListen
         ly_consume = ly_user_function.getChildAt(2);
         ly_play = ly_user_function.getChildAt(3);
         ly_settings = ly_user_function.getChildAt(4);
-//        ly_vip.findViewById(R.id)
+
+        tv_user_vip = (TextView) ly_vip.findViewById(R.id.tv_user_function);
+        tv_user_words = (TextView) ly_words.findViewById(R.id.tv_user_function);
+        tv_user_consume = (TextView) ly_consume.findViewById(R.id.tv_user_function);
+        tv_user_play = (TextView) ly_play.findViewById(R.id.tv_user_function);
+        tv_user_settings = (TextView) ly_settings.findViewById(R.id.tv_user_function);
+
+
+        tv_coin_count = (TextView) findViewById(R.id.inc_tab_coin).findViewById(R.id.tv_tag_count);
+        tv_coin_title = (TextView) findViewById(R.id.inc_tab_coin).findViewById(R.id.tv_tag_title);
+        tv_point_count = (TextView) findViewById(R.id.inc_tab_point).findViewById(R.id.tv_tag_count);
+        tv_point_title = (TextView) findViewById(R.id.inc_tab_point).findViewById(R.id.tv_tag_title);
+        tv_balance_count = (TextView) findViewById(R.id.inc_tab_balance).findViewById(R.id.tv_tag_count);
+        tv_balance_title = (TextView) findViewById(R.id.inc_tab_balance).findViewById(R.id.tv_tag_title);
     }
 
     @Override
     public void doInitDefaultEvent() {
+        tv_user_des.setText("我的");
+        tv_coin_title.setText("听币");
+        tv_point_title.setText("积分");
+        tv_balance_title.setText("余额");
+        ((View) tv_coin_title.getParent()).setBackgroundColor(Color.WHITE);
+        ((View) tv_point_title.getParent()).setBackgroundColor(Color.WHITE);
+        ((View) tv_balance_title.getParent()).setBackgroundColor(Color.WHITE);
 
+        tv_user_vip.setText("VIP特权");
+        tv_user_words.setText("我的留言");
+        tv_user_consume.setText("消费记录");
+        tv_user_play.setText("点播记录");
+        tv_user_settings.setText("设置");
+    }
+
+    @Override
+    protected void dealStatusSpace(ViewGroup container) {
+        ViewGroup.LayoutParams lp = ly_user.getLayoutParams();
+        lp.height = lp.height + getSystemBarTint().getConfig().getStatusBarHeight();
+        ly_user.setLayoutParams(lp);
+        ly_user.getChildAt(0).setPadding(0, getSystemBarTint().getConfig().getStatusBarHeight(), 0, 0);
     }
 
     @Override
@@ -76,5 +125,10 @@ public class MinePageActivity extends BaseActivity implements View.OnClickListen
         ly_play.setOnClickListener(this);
         ly_settings.setOnClickListener(this);
 
+    }
+
+    @Override
+    protected int getStatusBarColorFromResId() {
+        return R.color.black_33;
     }
 }

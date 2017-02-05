@@ -28,7 +28,7 @@
             android:layout_toRightOf="@+id/iv_detail_book_logo"
             android:text="天才相师"
             android:textColor="@color/black_aa"
-            android:textSize="@dimen/tv_middle_more"/>
+            android:textSize="@dimen/tv_20"/>
 
         <TextView
             android:id="@+id/tv_detail_book_author"
@@ -39,7 +39,7 @@
             android:layout_marginTop="10dp"
             android:text="作者：王大锤"
             android:textColor="@color/black_5c"
-            android:textSize="@dimen/tv_middle_low"/>
+            android:textSize="@dimen/tv_16"/>
 
         <TextView
             android:id="@+id/tv_detail_book_player"
@@ -50,7 +50,7 @@
             android:layout_marginTop="10dp"
             android:text="播音：王大锤"
             android:textColor="@color/black_5c"
-            android:textSize="@dimen/tv_middle_low"/>
+            android:textSize="@dimen/tv_16"/>
 
         <TextView
             android:id="@+id/tv_detail_book_status"
@@ -61,7 +61,7 @@
             android:layout_marginTop="10dp"
             android:text="状态：连载中"
             android:textColor="@color/black_5c"
-            android:textSize="@dimen/tv_middle_low"/>
+            android:textSize="@dimen/tv_16"/>
 
         <TextView
             android:id="@+id/tv_detail_book_favorite"
@@ -75,7 +75,7 @@
             android:gravity="center"
             android:text="收藏"
             android:textColor="@color/black_5c"
-            android:textSize="@dimen/tv_middle_low"/>
+            android:textSize="@dimen/tv_16"/>
 
         <TextView
             android:id="@+id/tv_detail_book_share"
@@ -90,7 +90,7 @@
             android:gravity="center"
             android:text="分享"
             android:textColor="@color/black_5c"
-            android:textSize="@dimen/tv_middle_low"/>
+            android:textSize="@dimen/tv_16"/>
     </RelativeLayout>
 
     <include

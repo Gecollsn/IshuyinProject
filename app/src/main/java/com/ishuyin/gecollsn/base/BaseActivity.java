@@ -5,10 +5,14 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
+import com.ishuyin.gecollsn.R;
 import com.ishuyin.gecollsn.utils.KeyBoardUtil;
 
 import butterknife.ButterKnife;
@@ -22,21 +26,57 @@ public abstract class BaseActivity extends AppCompatActivity implements IDefault
 
     protected Activity mActivity;
     private SystemBarTintManager sbtMgr;
+    private boolean isDisplayActionBar;
+    private TextView actionBarTitle;
+
+    public boolean isDisplayActionBar() {
+        return isDisplayActionBar;
+    }
+
+    public void setDisplayActionBar(boolean displayActionBar) {
+        isDisplayActionBar = displayActionBar;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(definedLayoutId());
         ButterKnife.bind(this);
-        doInitEverything();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             dealStatusSpace((ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content));
         }
+        doInitEverything();
     }
 
     protected void dealStatusSpace(ViewGroup container) {
-        container.setPadding(container.getPaddingLeft(), container.getPaddingTop() + getSystemBarTint().getConfig()
-                .getStatusBarHeight(), container.getPaddingRight(), container.getPaddingBottom());
+        final ViewGroup viewParent = (ViewGroup) container.getChildAt(0);
+        int actionH = 0;
+        int statusH = getSystemBarTint().getConfig().getStatusBarHeight();
+        if (isDisplayActionBar) actionH = getSystemBarTint().getConfig().getActionBarHeight();
+        if (isDisplayActionBar) {
+            View actionBar = getLayoutInflater().inflate(R.layout.action_bar, null);
+            actionBar.setPadding(0, statusH, 0, 0);
+            container.addView(actionBar, new FrameLayout.LayoutParams(-1, actionH + statusH));
+            actionBar.findViewById(R.id.action_back).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onActionBackPressed();
+                }
+            });
+            actionBarTitle = (TextView) actionBar.findViewById(R.id.action_title);
+        }
+
+        viewParent.setPadding(viewParent.getPaddingLeft(), viewParent.getPaddingTop() + statusH + actionH, viewParent.getPaddingRight(),
+                viewParent.getPaddingBottom());
+    }
+
+    public void setActionBarTitle(String title) {
+        if (actionBarTitle == null) return;
+        actionBarTitle.setText(title);
+    }
+
+    protected void onActionBackPressed() {
+
     }
 
     protected void setStatusBar() {

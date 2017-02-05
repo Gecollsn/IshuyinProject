@@ -16,5 +16,5 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:textColor="@color/white"
-        android:textSize="@dimen/tv_small_more"/>
+        android:textSize="@dimen/tv_15"/>
 </LinearLayout>

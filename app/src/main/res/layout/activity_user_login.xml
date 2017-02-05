@@ -40,7 +40,7 @@
                 android:paddingLeft="10dp"
                 android:textColorHint="@color/black_33"
                 android:textCursorDrawable="@color/black_66"
-                android:textSize="@dimen/tv_middle_size"/>
+                android:textSize="@dimen/tv_18"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
                 android:gravity="center"
                 android:textColor="@color/black_99"
                 android:text="忘记密码？"
-                android:textSize="@dimen/tv_middle_low"/>
+                android:textSize="@dimen/tv_16"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -65,7 +65,7 @@
             android:paddingLeft="5dp"
             android:text="记住密码"
             android:textColor="@color/selector_color_normal_black66_selected_green"
-            android:textSize="@dimen/tv_middle_size"/>
+            android:textSize="@dimen/tv_18"/>
 
         <CheckBox
             android:layout_width="wrap_content"
@@ -75,7 +75,7 @@
             android:paddingLeft="5dp"
             android:text="自动登录"
             android:textColor="@color/selector_color_normal_black66_selected_green"
-            android:textSize="@dimen/tv_middle_size"/>
+            android:textSize="@dimen/tv_18"/>
 
     </LinearLayout>
 

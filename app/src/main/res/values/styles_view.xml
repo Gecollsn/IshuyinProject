@@ -4,7 +4,7 @@
     <style name="tv_wid$0_wei$1_hei$wp_gra$cen">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:textSize">@dimen/tv_small_size</item>
+        <item name="android:textSize">@dimen/tv_14</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/selector_color_normal_black66_selected_green</item>
         <item name="android:gravity">center</item>

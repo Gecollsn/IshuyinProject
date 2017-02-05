@@ -9,6 +9,10 @@ import com.ishuyin.gecollsn.base.BaseActivity;
  * @company www.ishuyin.com
  */
 public class UserLoginActivity extends BaseActivity {
+    {
+        setDisplayActionBar(true);
+    }
+
     @Override
     protected int definedLayoutId() {
         return R.layout.activity_user_login;
@@ -26,7 +30,7 @@ public class UserLoginActivity extends BaseActivity {
 
     @Override
     public void doInitDefaultEvent() {
-
+        setActionBarTitle("登录");
     }
 
     @Override

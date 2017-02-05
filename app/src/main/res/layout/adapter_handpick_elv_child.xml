@@ -25,7 +25,7 @@
         android:drawableRight="@drawable/main_handpick_more"
         android:text="更多"
         android:textColor="@color/green_spring_8dc44c"
-        android:textSize="@dimen/tv_middle_size"/>
+        android:textSize="@dimen/tv_18"/>
 
     <View
         android:layout_width="match_parent"

@@ -4,14 +4,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
-import android.widget.TextView;
 
 import com.ishuyin.gecollsn.R;
 import com.ishuyin.gecollsn.base.BaseActivity;
 import com.ishuyin.gecollsn.utils.ToastUtil;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 import butterknife.OnItemClick;
 
 /**
@@ -26,8 +24,10 @@ public class SortPageActivity extends BaseActivity {
     GridView gv_part2;
     @BindView(R.id.gv_sort_part3)
     GridView gv_part3;
-    @BindView(R.id.action_title)
-    TextView title;
+
+    {
+        setDisplayActionBar(true);
+    }
 
     @Override
     protected int definedLayoutId() {
@@ -47,11 +47,6 @@ public class SortPageActivity extends BaseActivity {
     @Override
     public void doInitData() {
 
-    }
-
-    @OnClick(R.id.action_back)
-    void turnFinish() {
-        finish();
     }
 
     @OnItemClick(R.id.gv_sort_part1)
@@ -85,7 +80,7 @@ public class SortPageActivity extends BaseActivity {
         gv_part2.setAdapter(mAdapter2);
         gv_part3.setAdapter(mAdapter3);
 
-        title.setText("分类");
+        setActionBarTitle("分类");
     }
 
     @Override

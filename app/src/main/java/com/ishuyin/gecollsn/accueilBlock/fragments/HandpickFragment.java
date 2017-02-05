@@ -43,7 +43,7 @@ public class HandpickFragment extends BaseFragment {
     View action_back;
     @BindView(R.id.action_title)
     TextView action_title;
-    @BindView(R.id.action_searchBar)
+    @BindView(R.id.ly_searchBar)
     View action_searchBar;
     @BindView(R.id.action_search_et)
     EditText action_searchBar_edit;

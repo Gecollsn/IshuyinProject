@@ -56,7 +56,7 @@
         android:paddingLeft="5dp"
         android:text="@string/accept_terms"
         android:textColor="@color/black_99"
-        android:textSize="@dimen/tv_middle_size"/>
+        android:textSize="@dimen/tv_18"/>
 
 
 </LinearLayout>

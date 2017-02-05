@@ -1,6 +1,8 @@
 package com.ishuyin.gecollsn.accueilBlock.activitys;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -8,8 +10,13 @@ import android.widget.TextView;
 
 import com.ishuyin.gecollsn.R;
 import com.ishuyin.gecollsn.base.BaseActivity;
+import com.ishuyin.gecollsn.base.UserInfo;
+import com.ishuyin.gecollsn.userBlock.activitys.UserLoginActivity;
+import com.ishuyin.gecollsn.utils.KeyBoardUtil;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * @author gecollsn
@@ -22,11 +29,15 @@ public class MinePageActivity extends BaseActivity implements View.OnClickListen
     @BindView(R.id.tv_user_name)
     TextView tv_user_name;
     @BindView(R.id.tv_user_locate)
-    TextView tv_user_locate;
+    TextView tv_user_onlinePeriod;
     @BindView(R.id.tv_user_des)
     TextView tv_user_des;
     @BindView(R.id.ly_user_function)
     ViewGroup ly_user_function;
+    @BindView(R.id.ly_user_unLogin)
+    View ly_user_unLogin;
+    @BindView(R.id.ly_user_login)
+    View ly_user_login;
     @BindView(R.id.ly_user)
     ViewGroup ly_user;
     private View ly_vip;
@@ -73,7 +84,6 @@ public class MinePageActivity extends BaseActivity implements View.OnClickListen
         tv_user_play = (TextView) ly_play.findViewById(R.id.tv_user_function);
         tv_user_settings = (TextView) ly_settings.findViewById(R.id.tv_user_function);
 
-
         tv_coin_count = (TextView) findViewById(R.id.inc_tab_coin).findViewById(R.id.tv_tag_count);
         tv_coin_title = (TextView) findViewById(R.id.inc_tab_coin).findViewById(R.id.tv_tag_title);
         tv_point_count = (TextView) findViewById(R.id.inc_tab_point).findViewById(R.id.tv_tag_count);
@@ -97,6 +107,34 @@ public class MinePageActivity extends BaseActivity implements View.OnClickListen
         tv_user_consume.setText("消费记录");
         tv_user_play.setText("点播记录");
         tv_user_settings.setText("设置");
+
+        setFunctionLeftDrawable(tv_user_vip, R.drawable.mine_vip);
+        setFunctionLeftDrawable(tv_user_words, R.drawable.mine_leave_msg);
+        setFunctionLeftDrawable(tv_user_consume, R.drawable.mine_consume_record);
+        setFunctionLeftDrawable(tv_user_play, R.drawable.mine_play_record);
+        setFunctionLeftDrawable(tv_user_settings, R.drawable.mine_settings);
+        setFunctionLeftDrawable(tv_user_des, R.drawable.mine_tag);
+
+        if (UserInfo.getUser().isLogin()) {
+            tv_user_name.setText(UserInfo.getUser().getUserName());
+            Picasso.with(this).load(UserInfo.getUser().getLogo()).into(iv_user_logo);
+            ly_user_login.setVisibility(View.VISIBLE);
+            ly_user_unLogin.setVisibility(View.GONE);
+        } else {
+            ly_user_unLogin.setVisibility(View.VISIBLE);
+            ly_user_login.setVisibility(View.GONE);
+        }
+    }
+
+    @OnClick(R.id.ly_user_unLogin)
+    void requestUser2Login() {
+        if (KeyBoardUtil.isFastDoubleClick()) return;
+        startActivity(new Intent(this, UserLoginActivity.class));
+    }
+
+    private void setFunctionLeftDrawable(TextView v, int resId) {
+        Drawable drawable = getResources().getDrawable(resId);
+        v.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
     }
 
     @Override

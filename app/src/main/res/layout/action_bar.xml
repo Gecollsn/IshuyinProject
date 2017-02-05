@@ -25,11 +25,11 @@
         android:layout_height="wrap_content"
         android:text="标题"
         android:textColor="@color/white"
-        android:textSize="@dimen/tv_large_size"/>
+        android:textSize="@dimen/tv_16"/>
 
     <LinearLayout
         android:visibility="gone"
-        android:id="@+id/action_searchBar"
+        android:id="@+id/ly_searchBar"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginBottom="5dp"
@@ -54,6 +54,6 @@
             android:background="@null"
             android:hint=""
             android:textColorHint="@color/black_aa"
-            android:textSize="@dimen/tv_middle_low"/>
+            android:textSize="@dimen/tv_16"/>
     </LinearLayout>
 </LinearLayout>

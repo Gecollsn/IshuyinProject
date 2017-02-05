@@ -30,7 +30,7 @@
             android:layout_gravity="center_horizontal|end|bottom"
             android:background="@android:color/transparent"
             android:text="展开"
-            android:textSize="@dimen/tv_middle_size"
+            android:textSize="@dimen/tv_18"
             android:gravity="center"
             android:textColor="@color/green_spring_8dc44c"
             android:padding="16dp" />

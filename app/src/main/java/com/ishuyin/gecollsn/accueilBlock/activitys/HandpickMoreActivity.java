@@ -61,7 +61,7 @@ public class HandpickMoreActivity extends BaseActivity {
         tv_finished.setText("完结");
         tv_finished.setVisibility(View.VISIBLE);
         findViewById(R.id.action_title).setVisibility(View.GONE);
-        findViewById(R.id.action_searchBar).setVisibility(View.VISIBLE);
+        findViewById(R.id.ly_searchBar).setVisibility(View.VISIBLE);
         et_action_search.setHint("作者/播音/关键词");
         et_action_search.setFocusable(false);
 

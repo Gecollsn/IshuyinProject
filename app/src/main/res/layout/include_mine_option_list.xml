@@ -13,7 +13,7 @@
         android:drawableLeft="@drawable/mine_vip"
         android:drawablePadding="10dp"
         android:text="VIP特权"
-        android:textSize="@dimen/tv_middle_low"/>
+        android:textSize="@dimen/tv_16"/>
 
     <ImageView
         android:id="@+id/iv_user_tips"
@@ -37,7 +37,7 @@
         android:gravity="center"
         android:text="购买"
         android:textColor="@color/red"
-        android:textSize="@dimen/tv_middle_size"/>
+        android:textSize="@dimen/tv_18"/>
 
     <ImageView
         android:layout_width="wrap_content"

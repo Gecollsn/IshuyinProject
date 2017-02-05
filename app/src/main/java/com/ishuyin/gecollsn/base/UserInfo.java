@@ -12,6 +12,7 @@ public class UserInfo {
     private String userId;
     private String location;
     private String logo;
+    private String onlinePeriod;
 
     private UserInfo() {
         resetUserInfo();
@@ -24,6 +25,14 @@ public class UserInfo {
             }
         }
         return instance;
+    }
+
+    public String getOnlinePeriod() {
+        return onlinePeriod;
+    }
+
+    public void setOnlinePeriod(String onlinePeriod) {
+        this.onlinePeriod = onlinePeriod;
     }
 
     public void resetUserInfo() {
